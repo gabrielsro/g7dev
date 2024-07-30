@@ -6,7 +6,12 @@ export default function Footer() {
         <div>2669372</div>
       </div>
       <div className="grid place-content-center py-2">
-        Powered by xtcdev.com
+        <div className="flex gap-1">
+          <p>Powered by</p>
+          <a href="https://www.xtcdev.com" className="text-teal-300">
+            xtcdev.com
+          </a>
+        </div>
       </div>
     </footer>
   );
