@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className="h-screen grid grid-rows-[auto,1fr]">
           <TopNav />
           <div className="overflow-y-scroll">
-            <main className="">{children}</main>
+            <main className="px-6 lg:px-40">{children}</main>
             <Footer />
           </div>
         </div>
