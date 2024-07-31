@@ -11,6 +11,7 @@ export default async function Blog() {
           {posts.map((post: any) => {
             return (
               <BlogCard
+                key={post.id}
                 id={post.id}
                 title={post.title}
                 coverPic={post.coverPic}
