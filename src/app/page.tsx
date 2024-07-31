@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen pt-4">
       <p className="lg:text-center text-lg">
