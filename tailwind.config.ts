@@ -16,6 +16,7 @@ const config: Config = {
       spacing: {
         "blog-card-w": "382",
         "blog-card-h": "200",
+        "post-banner": "400px",
       },
     },
   },

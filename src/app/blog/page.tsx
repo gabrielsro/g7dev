@@ -7,7 +7,7 @@ export default async function Blog() {
     <div className="min-h-screen">
       <h1 className="text-3xl font-semibold py-8">Blog</h1>
       <div className="grid place-content-center">
-        <div className="flex flex-col gap-4 lg:flex-row">
+        <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap">
           {posts.map((post: any) => {
             return (
               <BlogCard
@@ -15,6 +15,9 @@ export default async function Blog() {
                 id={post.id}
                 title={post.title}
                 coverPic={post.coverPic}
+                introduction={post.introduction}
+                createdAt={post.createdAt}
+                slug={post.slug}
               />
             );
           })}
