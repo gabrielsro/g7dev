@@ -16,7 +16,7 @@ export async function getPosts() {
       createdAt: post.attributes.createdAt,
       introduction: post.attributes.introduction,
       coverPic:
-        post.attributes.coverPicture.data.attributes.formats.medium?.url,
+        post.attributes.coverPicture.data?.attributes.formats.medium?.url,
     };
   });
   return postsSimplified;
@@ -34,7 +34,7 @@ export async function getPost(slug: string) {
     createdAt: postData.createdAt,
     introduction: postData.introduction,
     content: postData.content,
-    coverPic: postData.coverPicture.data.attributes.url,
+    coverPic: postData.coverPicture.data?.attributes.url,
   };
   console.log(postSimplified);
   return postSimplified;
