@@ -41,8 +41,8 @@ export default function BlogCard({
         </p>
         <div className="absolute bottom-0 left-0 flex w-full justify-between items-end px-5 pb-5">
           <div>{dateFormatter(createdAt)}</div>
-          <a
-            href="#"
+          <Link
+            href={`/blog/${slug}`}
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Read more
@@ -61,7 +61,7 @@ export default function BlogCard({
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
