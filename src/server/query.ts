@@ -39,3 +39,21 @@ export async function getPost(slug: string) {
   console.log(postSimplified);
   return postSimplified;
 }
+
+export async function getLatestPosts() {
+  const response = await fetch(
+    `${process.env.STRAPI_URL}/api/posts?sort[0]=createdAt:desc&populate[coverPicture][fields][0]=formats&fields[0]=title&fields[1]=slug&pagination[limit]=5`,
+    { cache: "no-store" }
+  );
+  const posts = await response.json();
+  const postsData = posts.data.map((post: any) => {
+    return {
+      title: post.attributes.title,
+      slug: post.attributes.slug,
+      coverPic:
+        post.attributes.coverPicture?.data?.attributes?.formats?.medium?.url,
+    };
+  });
+  console.log(postsData);
+  return postsData;
+}
