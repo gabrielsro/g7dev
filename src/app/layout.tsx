@@ -18,11 +18,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark`}>
+      {/* <body className={`${inter.className} `}>
         <div className="h-screen grid grid-rows-[auto,1fr]">
           <TopNav />
           <div className="overflow-y-scroll">
             <main className="px-6 lg:px-40 relative">{children}</main>
+            <Footer />
+          </div>
+        </div>
+      </body> */}
+      <body className={`${inter.className} dark bg-black`}>
+        <div className="h-screen grid grid-rows-[auto,1fr]">
+          <TopNav />
+          <div className="overflow-y-scroll min-h-full flex flex-col relative">
+            <main className="relative flex-grow">{children}</main>
             <Footer />
           </div>
         </div>

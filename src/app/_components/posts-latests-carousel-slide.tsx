@@ -15,19 +15,26 @@ export default function PostsLatestCarouselSlide({ posts }: { posts: any }) {
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
 
   return (
-    <div>
-      <div className="max-w-sm flex justify-between px-2 pr-4">
-        <p>Latest posts</p>
-        <Link href="/blog" className="text-blue-500 font-semibold">
+    <div className="grid place-content-center">
+      <div className="max-w-sm flex justify-end pr-2">
+        <Link
+          href="/blog"
+          className="text-blue-500 font-semibold flex items-center gap-1"
+        >
           Go to Blog
+          <img
+            src="/icons/arrow-right.svg"
+            alt="Right arrow"
+            className="w-5 h-5"
+          />
         </Link>
       </div>
       <Carousel
-        opts={{ align: "start", loop: true }}
+        opts={{ align: "center", loop: true }}
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
-        className="w-full max-w-sm"
+        className="w-full max-w-sm flex"
       >
         <CarouselContent>
           {posts.map((post: any, i: any) => {

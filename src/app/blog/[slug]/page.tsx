@@ -10,7 +10,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
 
   return (
-    <div className="min-h-screen lg:px-10">
+    <div className="min-h-screen px-4 lg:px-10">
       <div className="pt-3 absolute left-1 lg:left-4 lg:pt-4">
         <Link href="/blog">
           <img

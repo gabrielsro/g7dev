@@ -4,7 +4,7 @@ import BlogCard from "./_components/blogCard";
 export default async function Blog() {
   const posts = await getPosts();
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-10">
       <h1 className="text-3xl font-semibold py-8">Blog</h1>
       <div className="grid place-content-center">
         <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap">
