@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import * as React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -7,16 +8,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import PostsLatestCarouselCard from "./posts-latest-carousel-card";
 
 export default function PostsLatestCarouselSlide({ posts }: { posts: any }) {
-  const plugin = React.useRef(Autoplay({ delay: 2000 }));
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false })
+  );
 
   return (
     <div className="grid place-content-center">
-      <div className="max-w-sm flex justify-end pr-2">
+      <div className="max-w-sm flex justify-end pr-2 z-50">
         <Link
           href="/blog"
           className="text-blue-500 font-semibold flex items-center gap-1"
@@ -30,10 +32,8 @@ export default function PostsLatestCarouselSlide({ posts }: { posts: any }) {
         </Link>
       </div>
       <Carousel
-        opts={{ align: "center", loop: true }}
+        opts={{ loop: true }}
         plugins={[plugin.current]}
-        onMouseEnter={plugin.current.stop}
-        onMouseLeave={plugin.current.reset}
         className="w-full max-w-sm flex"
       >
         <CarouselContent>
