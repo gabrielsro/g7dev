@@ -1,5 +1,6 @@
 import { WavyBackground } from "@/ui/wavy-background";
 import PostsLatestCarousel from "./_components/posts-latest-carousel";
+import Socials from "./_components/socials";
 
 export default async function Home() {
   return (
@@ -15,6 +16,9 @@ export default async function Home() {
         </WavyBackground>
       </div>
       <PostsLatestCarousel />
+      <div className="pt-14 md:pt-24">
+        <Socials />
+      </div>
     </div>
   );
 }
