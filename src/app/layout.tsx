@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <PHProvider>
         <body className={`${inter.className} dark bg-black`}>
+          <PostHogPageView />
           <div className="h-screen grid grid-rows-[auto,1fr]">
             <TopNav />
             <div className="overflow-y-scroll min-h-full flex flex-col relative">
