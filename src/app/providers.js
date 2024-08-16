@@ -9,6 +9,7 @@ if (typeof window !== "undefined") {
     ui_host: "https://us.posthog.com",
     person_profiles: "identified_only",
     capture_pageview: false,
+    capture_pageleave: true,
   });
 }
 
