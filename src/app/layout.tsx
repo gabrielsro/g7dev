@@ -3,6 +3,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import TopNav from "./_components/topnav";
 import Footer from "./_components/footer";
+import { PHProvider } from "./providers";
+import dynamic from "next/dynamic";
+
+const PostHogPageView = dynamic(() => import("./PostHogPageView"), {
+  ssr: false,
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +24,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} dark bg-black`}>
-        <div className="h-screen grid grid-rows-[auto,1fr]">
-          <TopNav />
-          <div className="overflow-y-scroll min-h-full flex flex-col relative">
-            <main className="relative flex-grow">{children}</main>
-            <Footer />
+      <PHProvider>
+        <body className={`${inter.className} dark bg-black`}>
+          <div className="h-screen grid grid-rows-[auto,1fr]">
+            <TopNav />
+            <div className="overflow-y-scroll min-h-full flex flex-col relative">
+              <main className="relative flex-grow">{children}</main>
+              <Footer />
+            </div>
           </div>
-        </div>
-      </body>
+        </body>
+      </PHProvider>
     </html>
   );
 }

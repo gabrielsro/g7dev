@@ -4,8 +4,8 @@ Blog. It's creation is a means of learning Next.js. It's publications, a means o
 
 ## TODO
 
-- [ ] Link domain
-- [ ] Set up backend (Strapi)
-- [ ] Attach backend to frontend
+- [x] Link domain
+- [x] Set up backend (Strapi)
+- [x] Attach backend to frontend
 - [ ] Add analytics
 - [ ] Rate limit
