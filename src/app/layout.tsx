@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import TopNav from "./_components/topnav";
 import Footer from "./_components/footer";
-import { PHProvider } from "./providers";
+import { PHProvider } from "./_analytics/providers";
 import dynamic from "next/dynamic";
 
 const PostHogPageView = dynamic(() => import("./PostHogPageView"), {
